@@ -31,12 +31,6 @@ app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 app.use(express.static(path.resolve('./public'))); 
 
-app.get('/favicon.ico', (req, res) => {
-    res.status(204).end(); // Respond with 204 No Content
-});
-
-// app.use(express.static(path.join(__dirname, './public')));
-// app.use(favicon(path.join(__dirname, './public', 'favicon.ico')));
 
 app.get('/',async(req,res) => {
     const allBlogs = await Blog.find({});

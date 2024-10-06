@@ -8,7 +8,7 @@ router.get('/signin',(req,res) => {
 
 router.post('/signin', async (req,res) => {
     const {email,password} = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     try
     {
         const token = await User.matchPasswordAndGenerateToken(email,password);
