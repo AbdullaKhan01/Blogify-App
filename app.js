@@ -17,8 +17,8 @@ const { checkForAuthenticationCookie } = require('./middlewares/authentication')
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-mongoose.connect(process.env.MONGO_URL)
-.then(e => console.log('MongoDB Connected'));
+let url = "mongodb+srv://sheryabdullah25072003:RTc5e0KKQ48HLQVP@cluster0.su8q0.mongodb.net/"
+mongoose.connect(url).then(e => console.log('MongoDB Connected'));
 
 
 app.set('view engine','ejs');
